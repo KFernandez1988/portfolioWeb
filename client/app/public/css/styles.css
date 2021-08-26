@@ -1,0 +1,36 @@
+--var
+
+
+body {
+    background-color: #3b3b40 !important;
+}
+
+h1, h2, h3 {
+    color: #f25e3d !important;
+}
+/** #47414c **/
+
+p, a {
+    color: #acacac;
+}
+
+a.button.alt {
+    border: solid 2px #acacac !important;
+    background-color: #acacac !important;
+}
+
+.box {
+    background-color: #47414c !important;
+    border: solid 3px #acacac !important;
+}
+
+section#three div.inner header.align-center > *  {
+    color: #47414c !important;
+}
+
+div.image.fit img {
+    width: 300;
+    height: 200;
+}
+
+

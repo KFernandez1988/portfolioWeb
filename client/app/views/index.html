@@ -1,0 +1,109 @@
+<%- include('./_partials/_head.html') %>
+<body>
+  <%- include('./_partials/_header.html')%>
+<!-- Banner -->
+<section id="banner" class="banner full ban">
+  <% sliders.forEach(function(slide) { %>
+  <article>
+    <img src="/images/sliders/<%= slide.name %>" alt="" />
+    <div class="inner">
+      <header>
+        <p>
+          <%= slide.sub %>
+          <a href="https://templated.co">See More!</a>
+        </p>
+        <h2><%= slide.title %></h2>
+      </header>
+    </div>
+  </article>
+  <% }); %>
+</section>
+<!-- One -->
+<section id="one" class="wrapper style2">
+  <div class="inner">
+    <div class="grid-style">
+      <!-- card area -->
+      <% clients.forEach(client => { %>
+      <div>
+        <div class="box">
+          <div class="image fit img-client">
+            <img src="/images/<%= client.img %>" alt="" />
+          </div>
+          <div class="content">
+            <header class="align-center">
+              <p><%= client.sub %></p>
+              <h2><%= client.title %></h2>
+            </header>
+            <p><%= client.paragraph %></p>
+            <footer class="align-center">
+              <a href="#" class="button alt">Learn More</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Two -->
+<section id="two" class="wrapper style3">
+  <div class="inner">
+    <header class="align-center">
+      <p>In the section below there are projects and apps build by category</p>
+      <h2>Continue Exploring</h2>
+    </header>
+  </div>
+</section>
+
+<!-- Three -->
+<section id="three" class="wrapper style2">
+  <div class="inner">
+    <header class="align-center">
+      <p class="special">
+        All images are links to a list of the category you select
+      </p>
+      <h2>Project By Category</h2>
+    </header>
+    <div class="gallery">
+    <% categories.forEach( cat => { %>
+      <div>
+        <div class="image fit">
+          <p><%= cat.sub %></p>
+          <h3><%= cat.title %>
+          <a href="#"><img width="300px" height="300px" src="/images/category/<%= cat.img %>" alt="" /></a>
+        </div>
+      </div>
+    <% }); %>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="container">
+    <ul class="icons">
+      <li>
+        <a href="#" class="icon fa-twitter"
+          ><span class="label">Twitter</span></a
+        >
+      </li>
+      <li>
+        <a href="#" class="icon fa-facebook"
+          ><span class="label">Facebook</span></a
+        >
+      </li>
+      <li>
+        <a href="#" class="icon fa-instagram"
+          ><span class="label">Instagram</span></a
+        >
+      </li>
+      <li>
+        <a href="#" class="icon fa-envelope-o"
+          ><span class="label">Email</span></a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="copyright">&copy; Untitled. All rights reserved.</div>
+</footer>
+
+<%- include('./_partials/_footer.html') %>

@@ -1,0 +1,72 @@
+<%- include('../_partials/_head.html') %>
+<body class="subpage">
+<%- include('../_partials/_header.html') %>
+<!-- One -->
+<section id="One" class="wrapper style3">
+    <div class="inner">
+        <header class="align-center">
+            <p>Eleifend vitae urna</p>
+            <h2>Generic Page Template</h2>
+        </header>
+    </div>
+</section>
+
+<!-- Two -->
+<section id="two" class="wrapper style2">
+    <div class="inner">
+        <div class="box">
+            <div class="content">
+                <h3>Project List</h3>
+                <form method="post" action="#">
+                    <div class="row uniform">
+                        <div class="9u 12u$(small)">
+                            <input type="text" name="query" id="query" value="" placeholder="Query" />
+                        </div>
+                        <div class="3u$ 12u$(small)">
+                            <input type="submit" value="Search" class="fit" />
+                        </div>
+                    </div>
+                </form>
+                <p>See some of the projects I build</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr >
+                                <th style="color: #acacac; text-transform: uppercase;" >Client Name</th>
+                                <th style="color: #acacac; text-transform: uppercase;" >Description</th>
+                                <th style="color: #acacac; text-transform: uppercase;" >Category</th>
+                                <th style="color: #acacac; text-transform: uppercase;" >See Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (projects.length > 0) { %>
+                            <% projects.forEach(project => { %>
+                            <tr>
+                                <td><%=  project.client %></td>
+                                <td><%=  project.desc %></td>
+                                <td><%=  project.cate %></td>
+                                <td><a href="<%=  project.url %>">link</a></td>
+                            </tr>
+                            <% }); %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="4">There are no projects</td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                        
+                    </table>
+                    <a href="#"
+                    style="display: inline-block;"
+                     class="button special big  previous"><</a>
+                    <p 
+                    style="display: inline-block; margin: 10px 25px"
+                    >4</p>
+                    <a href="#" 
+                     style="display: inline-block;"
+                     class="button special big next">></a>           
+                </div>
+        </div>
+    </div>
+</section>
+<%- include('../_partials/_footer.html') %>
