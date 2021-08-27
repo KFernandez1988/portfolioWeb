@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": { 
-    "dev": "concurrently --raw \" npm run client \" ",
+    "dev": "concurrently --raw \" npm run client \" \" npm run cms \" ",
     "client": "cd client; npm start",
+    "cms": "cd content-management; npm start",
+    "api": "cd api; npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

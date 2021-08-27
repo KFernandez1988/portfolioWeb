@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { useState } from "react";
+import ProjectFrom from './componente/Projects/Form';
+
 function App() {
+  const [form, setForm] = useState(< ProjectFrom />);
+  
+  const managementForm = (forms) => {
+    switch (forms) {
+      case "projects": {
+        setForm(< ProjectFrom />);
+        break;
+      }
+      case "offers": {
+        setForm("OffersFrom");
+        break;
+      }
+      case "emails": {
+        setForm("emailsFrom");
+        break;
+      }
+      default: {
+         setForm(<ProjectFrom />);
+        }
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section>
+        <ul>
+          <li><button onClick={() => managementForm("projects")}>Manage Projects</button></li>
+          <li><button onClick={() => managementForm("offers")}>Manage Offers</button></li>
+          <li><button onClick={() => managementForm("emails")}>Manage email</button></li>
+        </ul>
+      </section>
+      {form}
+    </>
   );
 }
 
