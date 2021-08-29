@@ -1,0 +1,6 @@
+{
+    "env": {
+        "DEBUG": "api:*",
+        "SECRET": "API_SERVER_ONLY_I_CAN_USE_NOW"
+    }
+}
